@@ -16,10 +16,12 @@ namespace _11___FrontBack
 
         public static string FrontBack(string str)
         {
-            if (str.Length <= 1) return str;
-            var mid = str.Substring(1, str.Length - 2);
-            return str[(str.Length - 1)] + mid + str[0];
+            //if (str.Length <= 1) return str;
+            //var mid = str.Substring(1, str.Length - 2);
+            //return str[(str.Length - 1)] + mid + str[0];
 
+            return str.Length > 1
+                ? str.Substring(str.Length - 1) + str.Substring(1, str.Length - 2) + str.Substring(0, 1) : str;
         }
     }
 }
