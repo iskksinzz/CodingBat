@@ -19,6 +19,7 @@ namespace _17___Between10and20
         /* Given 2 int values, return true if either of them is in the range 10..20 inclusive. */
         public static bool Bewteen10and20(int a, int b)
         {
+            //return Enumerable.Range(10, 20).Contains(a) || Enumerable.Range(10, 20).Contains(b);
             return (a >= 10 && a <= 20) || (b >= 10 && b <= 20);
         }
     }
