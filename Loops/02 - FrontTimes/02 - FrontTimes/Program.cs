@@ -23,17 +23,16 @@ namespace _02___FrontTimes
         public static string FrontTimes(string str, int n)
         {
             var result = string.Empty;
-            if (str.Length > 2)
-            {
-                for (var i = 0; i < n; i++)
-                {
-                    result += str.Substring(0, 3);
-                }
-                return result;
-            }
+            var frontOfString = 3;
+
+            if (frontOfString > str.Length)
+                frontOfString = str.Length;
+
+            var front = str.Substring(0, frontOfString);
+
             for (var i = 0; i < n; i++)
             {
-                result += str;
+                result += front;
             }
             return result;
         }
