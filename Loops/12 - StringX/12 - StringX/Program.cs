@@ -20,13 +20,17 @@ namespace _12___StringX
          * Except an "x" at the very start or end should not be removed. */
         public static string StringX(string str)
         {
-            var result = string.Empty;
-            for (var i = 0; i < str.Length; i++)
-            {
-                if (!(i > 0 && i < str.Length - 1 && str.Substring(i, 1).Equals("x")))
-                    result += str.Substring(i, 1);
-            }
-            return result;
+            return str.Where((t, i) => !(t.Equals('x') && i > 0 && i < str.Length - 2)).Aggregate(string.Empty, (current, t) => current + t);
+
+            // Alternative to LINQ
+
+            //var result = string.Empty;
+            //for (var i = 0; i < str.Length; i++)
+            //{
+            //    if (!(str[i].Equals('x') && i > 0 && i < str.Length-2))
+            //        result += str[i];
+            //}
+            //return result;
         }
     }
 }
