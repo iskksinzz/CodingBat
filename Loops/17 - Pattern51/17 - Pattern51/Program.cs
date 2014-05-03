@@ -23,7 +23,7 @@ namespace _17___Pattern51
         {
             for (var i = 0; i < numbers.Length - 1; i++)
             {
-                if (numbers[i + 1] == (numbers[i] + 5) && Math.Abs(numbers[i + 2] - (numbers[i] - 1)) <= 2) 
+                if (numbers[i + 1].Equals(numbers[i] + 5) && Math.Abs(numbers[i + 2] - (numbers[i] - 1)) <= 2) 
                     return true;
             }
             return false;
