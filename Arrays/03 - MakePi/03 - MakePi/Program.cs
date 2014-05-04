@@ -19,16 +19,15 @@ namespace _03___MakePi
 
         public static int[] MakePi(int n)
         {
-            var pi = Math.PI;
-            var str = pi.ToString().Remove(1, 1);
+            var pi = Convert.ToString(Math.PI).Remove(1,1);
             var numbers = new int[n];
 
             for (var i = 0; i < n; i++)
             {
-                numbers[i] = int.Parse(str[i].ToString());
+                numbers[i] = int.Parse(pi[i].ToString());
                 Console.Write(numbers[i]);
             }
-            return null;
+            return numbers;
         }
     }
 }
