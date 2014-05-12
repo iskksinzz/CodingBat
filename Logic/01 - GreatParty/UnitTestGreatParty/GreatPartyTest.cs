@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using _01___GreatParty;
-using UnitTestGreatParty;
 
 namespace UnitTestGreatParty
 {
