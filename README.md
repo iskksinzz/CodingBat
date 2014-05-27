@@ -1,3 +1,3 @@
-CodingBat
+CodingBat http://codingbat.com
 =========
-Warmup exercises that are similar to the exercises from CodingBat - however solved in C#
+My solution in **C#** to some of the exercises from http://codingbat.com
