@@ -20,7 +20,7 @@ namespace DoubleChar
         public static string DoubleChar(string str)
         {
             var result = string.Empty;
-            for (var i = 0; i < str.Length-1; i++)
+            for (var i = 0; i < str.Length; i++)
             {
                 result += str.Substring(i, 1) + str.Substring(i, 1);
             }
