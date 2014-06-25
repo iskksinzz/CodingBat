@@ -21,16 +21,16 @@ namespace XYBalance
          * One 'y' can balance multiple 'x's. Return true if the given string is xy-balanced. */
         public static bool XyBalance(string str)
         {
-            for (var i = 0; i < str.Length; i++)
+            bool y = false;
+            for (var i = str.Length - 1; i >= 0; i--)
             {
-                if (!str[i].Equals('x')) continue;
-                for (var j = i+1; j < str.Length; j++)
-                {
-                    if(str[j].Equals('y'))
-                        return true;
-                }
+                if (str[i].Equals('y'))
+                    y = true;
+
+                if (str[i].Equals('x') && !y)
+                    return false;
             }
-            return false;
+            return true;
         }
     }
 }
