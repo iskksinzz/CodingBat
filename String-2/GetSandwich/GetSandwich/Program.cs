@@ -13,7 +13,7 @@ namespace GetSandwich
         {
             Console.WriteLine(GetSandwich("breadjambread"));
             Console.WriteLine(GetSandwich("xxbreadjambreadyy"));
-            Console.WriteLine(GetSandwich("xxbreadyy")); 
+            Console.WriteLine(GetSandwich("xxbreadyy"));
             Console.ReadLine();
         }
 
@@ -24,13 +24,13 @@ namespace GetSandwich
 
         public static string GetSandwich(string str)
         {
-            if (str.Length < 11) return ""; 
+            if (str.Length < 11) return "";
 
-            int firstBread = 0;
-            int lastBread = 0;
-            int count = 0;
+            var firstBread = 0;
+            var lastBread = 0;
+            var count = 0;
 
-            for (int i = 0; i < str.Length; i++)
+            for (var i = 0; i < str.Length; i++)
             {
                 if (i <= str.Length - 5 && str.Substring(i, 5).Equals("bread"))
                 {
@@ -45,7 +45,7 @@ namespace GetSandwich
                     }
                 }
             }
-            return str.Substring(firstBread, lastBread - firstBread);
+            return lastBread < 1 ? "" : str.Substring(firstBread, lastBread - firstBread);
         }
     }
 }
