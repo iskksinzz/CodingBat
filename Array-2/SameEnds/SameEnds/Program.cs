@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 
 namespace SameEnds
 {
@@ -15,10 +16,12 @@ namespace SameEnds
         /* Return true if the group of N numbers at the start and end of the array are the same.*/
         public static bool SameEnd(int[] nums, int len)
         {
-            var b = true;
-            for (int i = 0; i < len; i++)
+            var b = false;
+            for (var i = 0; i < len; i++)
             {
                 b = nums[i] == nums[nums.Length - len + i];
+                if (!b)
+                    break;
             }
             return b;
         }
