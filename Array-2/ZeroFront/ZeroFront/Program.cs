@@ -19,8 +19,7 @@ namespace ZeroFront
             {
                 if (nums[i] != 0) continue;
                 nums[i] = nums[j];
-                nums[j] = 0;
-                j++;
+                nums[j++] = 0;
             }
             return nums;
         }
