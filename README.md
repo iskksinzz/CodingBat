@@ -1,3 +1,3 @@
-CodingBat http://codingbat.com
+CodingBat
 =========
-My solution in **C#** to some of the exercises from http://codingbat.com
+My solutions in C# to some of the exercises from http://codingbat.com
