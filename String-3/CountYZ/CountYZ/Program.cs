@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace CountYZ
 {
@@ -14,14 +15,7 @@ namespace CountYZ
 
         public static int CountYZ(string str)
         {
-            var c = 0;
-            str = str.ToLower() + " ";
-            for (var i = 0; i < str.Length - 1; i++)
-            {
-                if ((str[i] == 'y' || str[i] == 'z') && !char.IsLetter(str[i + 1]))
-                    c++;
-            }
-            return c;
+            return Regex.Split(str, "[yzYZ](?!\\p{L})").Length - 1;
         }
     }
 }
