@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace GHappy
 {
@@ -14,14 +15,10 @@ namespace GHappy
 
         public static bool GHappy(string str)
         {
-            var result = false;
-            if (str == string.Empty) { return true; }
-            for (var i = 1; i <= str.Length - 1; i++)
-            {
-                if (str[i] != 'g') continue;
-                result = str[i - 1] == 'g' || i < str.Length - 1 && str[i + 1] == 'g';
-            }
-            return result;
+            return !Regex.Replace(str, // The string to search for a match.
+                                "gg+", // The regular expression pattern to match.
+                                "").   // The replacement string.
+                                Contains("g"); // If str contains any g's then they're unhappy :(   
         }
     }
 }
