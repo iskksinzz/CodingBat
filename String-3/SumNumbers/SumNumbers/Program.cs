@@ -22,7 +22,7 @@ namespace SumNumbers
         public static int SumNumbers(string str)
         {
             var sum = 0;
-            foreach (var number in Regex.Split(str, "\\D+"))
+            foreach (var number in Regex.Split(str, "[^0-9]"))
             {
                 int n;
                 var isNumeric = int.TryParse(number, out n);
