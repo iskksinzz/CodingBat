@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace SumNumbers
@@ -21,15 +22,8 @@ namespace SumNumbers
 
         public static int SumNumbers(string str)
         {
-            var sum = 0;
-            foreach (var number in Regex.Split(str, "[^0-9]"))
-            {
-                int n;
-                var isNumeric = int.TryParse(number, out n);
-                if (isNumeric)
-                    sum += n;
-            }
-            return sum;
+            var n = 0;
+            return Regex.Split(str, "[^0-9]").Select(number => int.TryParse(number, out n)).Where(isNumeric => isNumeric).Sum(isNumeric => n);
         }
     }
 }
