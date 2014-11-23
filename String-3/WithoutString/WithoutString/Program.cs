@@ -31,15 +31,7 @@ namespace WithoutString
 
         public static string WithoutString(string str, string remove)
         {
-            while (true)
-            {
-                var i = str.ToLower().IndexOf(remove.ToLower());
-                if (i != -1)
-                    str = str.Remove(i, remove.Length);
-                if (!str.ToLower().Contains(remove.ToLower()))
-                    break;
-            }
-            return str;
+            return Regex.Replace(str, "(?i)" + remove, "");
         }
     }
 }
