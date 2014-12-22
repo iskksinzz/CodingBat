@@ -15,17 +15,12 @@ namespace MaxBlock
 
         private static int MaxBlock(string str)
         {
+            var matches = Regex.Matches(str, @"(.)\1+");
             var max = 0;
-            for (var i = 0; i < str.Length; i++)
-            {
-                var c = 0;
-                for (var j = i; j < str.Length; j++)
-                {
-                    if (str[i].Equals(str[j])) c++;
-                    else break;
-                }
-                if (c > max) max = c;
-            }
+
+            foreach (Match match in matches)
+                if (match.Length > max) max = match.Length;
+
             return max;
         }
     }
