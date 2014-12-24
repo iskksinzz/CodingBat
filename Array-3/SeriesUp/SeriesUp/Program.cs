@@ -16,9 +16,9 @@ namespace SeriesUp
         {
             var arr = new int[n * (n + 1) / 2];
             var c = 0;
-            for (var i = 0; i <= n; i++)
+            for (var i = 1; i <= n; i++)
             {
-                for (var j = 1; j < i + 1; j++)
+                for (var j = 1; j <= i; j++)
                     arr[c++] = j;
             }
             return arr;
