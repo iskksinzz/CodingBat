@@ -13,24 +13,22 @@ namespace CountClumps
         }
         public static int CountClumps(int[] nums)
         {
-            int c = 0, k = 0;
-            for (int i = 0; i < nums.Length - 1; i++)
+            var b = false;
+            var c = 0;
+            for (int i = 1; i < nums.Length; i++)
             {
-                if (nums[i] == nums[i + 1])
+                if (nums[i] == nums[i - 1])
                 {
-                    if (i > 0 && nums[i] == nums[i - 1])
-                        continue;
-                    c++;
+                    if (!b)
+                    {
+                        c++;
+                        b = true;
+                    }
                 }
                 else
-                {
-                    if (c > 0)
-                        k++;
-                    c = 0;
-                }
+                    b = false;
             }
-            if (c > 0) k++;
-            return k;
+            return c;
         }
 
     }
